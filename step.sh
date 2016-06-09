@@ -71,8 +71,16 @@ echo " (i) Original Bundle Short Version String: $ORIGINAL_BUNDLE_SHORT_VERSION"
 /usr/libexec/PlistBuddy -c "Set :AppId ${app_id}" "${info_plist_file}"
 
 REPLACED_CFBundleDisplayName="$(/usr/libexec/PlistBuddy -c "Print :CFBundleDisplayName" "${info_plist_file}")"
+REPLACED_CFBundleIdentifier="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "${info_plist_file}")"
+REPLACED_XSAppIconAssets="$(/usr/libexec/PlistBuddy -c "Print :XSAppIconAssets" "${info_plist_file}")"
+REPLACED_XSLaunchImageAssets="$(/usr/libexec/PlistBuddy -c "Print :XSLaunchImageAssets" "${info_plist_file}")"
+REPLACED_Logo="$(/usr/libexec/PlistBuddy -c "Print :Logo" "${info_plist_file}")"
+REPLACED_AppId="$(/usr/libexec/PlistBuddy -c "Print :AppId" "${info_plist_file}")"
 echo " (i) Replaced CFBundleDisplayName: $REPLACED_CFBundleDisplayName"
-REPLACED_logo="$(/usr/libexec/PlistBuddy -c "Print :logo" "${info_plist_file}")"
-echo " (i) Replaced Bundle Short Version String: $REPLACED_logo"
+echo " (i) Replaced CFBundleIdentifier: $REPLACED_CFBundleIdentifier"
+echo " (i) Replaced XSAppIconAssets: $REPLACED_XSAppIconAssets"
+echo " (i) Replaced XSLaunchImageAssets: $REPLACED_XSLaunchImageAssets"
+echo " (i) Replaced Logo: $REPLACED_Logo"
+echo " (i) Replaced AppId: $REPLACED_AppId"
 
 # ==> Bundler version patched in Info.plist file for iOS project
