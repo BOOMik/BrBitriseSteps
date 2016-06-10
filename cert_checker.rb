@@ -18,6 +18,7 @@ dict = Hash[pems.zip(certs)]
 
 if dict.keys.keep_if { |e| e == provision_cert_data }.empty? 
   puts "Have no certificate for file #{ARGV.first}"
+  exit 1
 else
   puts "Your mobileprovision issued for #{dict[provision_cert_data]}"
 end
