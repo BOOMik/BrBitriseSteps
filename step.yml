@@ -1,6 +1,6 @@
-title: Bigrocket Variants iOS
+title: Check iOS Certificates is valid for Provisioning profile
 summary: |-
-  Bigrocket Variants iOS
+  Check iOS Certificates for Provisioning profile
 description: |-
   Bigrocket Variants iOS
 website: https://github.com/BOOMik/steps-set-ios-version
@@ -18,56 +18,12 @@ type_tags:
   - xcode
   - xamarin
   - ios
-  - info.plist
-  - versioning
 run_if: ".IsCI"
 inputs:
   - info_plist_file:
     opts:
-      title: "Info.plist file path"
+      title: "Provisioning profile file path"
       summary: ""
       description: |
-        Path to the given iOS project's Info.plist file.
+        Path to Provisioning profile file for check cetr.
       is_required: true
-  - bundle_name:
-    opts:
-      title: "Bundle Display Name"
-      summary: "Set the :CFBundleDisplayName to a specified value. Should be string."
-      description: |
-        CFBundleDisplayName
-      is_required: true
-  - bundle_id:
-    opts:
-      title: "Bundle Id"
-      summary: "Set the :CFBundleIdentifier to a specified value. Should be string."
-      description: |
-        CFBundleIdentifier
-      is_required: true  
-  - icon:
-    opts:
-      title: "Icon"
-      summary: "Set the :XSAppIconAssets to a specified value. Should be string."
-      description: |
-        XSAppIconAssets
-      is_required: true  
-  - launch:
-    opts:
-      title: "Launch"
-      summary: "Set the :XSLaunchImageAssets to a specified value. Should be string."
-      description: |
-        XSLaunchImageAssets
-      is_required: true  
-  - logo:
-    opts:
-      title: "Logo"
-      summary: "Set the :Logo to a specified value. Should be string."
-      description: |
-        Logo
-      is_required: true  
-  - app_id:
-    opts:
-      title: "AppId"
-      summary: "Set the :AppId to a specified value. Should be string."
-      description: |
-        AppId
-      is_required: true  
