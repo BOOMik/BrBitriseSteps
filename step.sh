@@ -24,7 +24,7 @@ echo ""
 echo ""
 echo " (i) Checking..."
 
-ruby "${THIS_SCRIPT_DIR}/cert_checker.rb ${file}"
+ruby ${THIS_SCRIPT_DIR}/cert_checker.rb ${file}
 
 cat ${info_plist_file}
 
