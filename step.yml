@@ -1,73 +1,40 @@
-title: Bigrocket Variants iOS
+title: Change value in file
 summary: |-
-  Bigrocket Variants iOS
+  Change value in file
 description: |-
-  Bigrocket Variants iOS
+  Change value in file
 website: https://github.com/BOOMik/steps-set-ios-version
 source_code_url: https://github.com/BOOMik/steps-set-ios-version
 support_url: https://github.com/BOOMik/steps-set-ios-version/issues
 source:
   git: https://github.com/BOOMik/steps-set-ios-version.git
-host_os_tags:
-  - "osx-10.10"
-project_type_tags:
-  - ios
 type_tags:
   - build
   - utils
-  - xcode
   - xamarin
   - ios
-  - info.plist
-  - versioning
+  - android
+  - code
 run_if: ".IsCI"
 inputs:
-  - info_plist_file:
+  - file:
     opts:
-      title: "Info.plist file path"
+      title: "File path"
       summary: ""
       description: |
-        Path to the given iOS project's Info.plist file.
+        The file that you want to change a value.
       is_required: true
-  - bundle_name:
+  - old_value:
     opts:
-      title: "Bundle Display Name"
-      summary: "Set the :CFBundleDisplayName to a specified value. Should be string."
+      title: "Old value"
+      summary: "For replace"
       description: |
-        CFBundleDisplayName
+        value
       is_required: true
-  - bundle_id:
+  - new_value:
     opts:
-      title: "Bundle Id"
-      summary: "Set the :CFBundleIdentifier to a specified value. Should be string."
+      title: "new_value"
+      summary: "To replace"
       description: |
-        CFBundleIdentifier
-      is_required: true  
-  - icon:
-    opts:
-      title: "Icon"
-      summary: "Set the :XSAppIconAssets to a specified value. Should be string."
-      description: |
-        XSAppIconAssets
-      is_required: true  
-  - launch:
-    opts:
-      title: "Launch"
-      summary: "Set the :XSLaunchImageAssets to a specified value. Should be string."
-      description: |
-        XSLaunchImageAssets
-      is_required: true  
-  - logo:
-    opts:
-      title: "Logo"
-      summary: "Set the :Logo to a specified value. Should be string."
-      description: |
-        Logo
-      is_required: true  
-  - app_id:
-    opts:
-      title: "AppId"
-      summary: "Set the :AppId to a specified value. Should be string."
-      description: |
-        AppId
+        new value
       is_required: true  
