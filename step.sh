@@ -4,8 +4,8 @@
 set -e
 #
 # Required parameters
-if [ -z "${info_plist_file}" ] ; then
-  echo " [!] Missing required input: info_plist_file"
+if [ -z "${file}" ] ; then
+  echo " [!] Missing required input: file"
   exit 1
 fi
 

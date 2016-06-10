@@ -20,7 +20,7 @@ type_tags:
   - ios
 run_if: ".IsCI"
 inputs:
-  - info_plist_file:
+  - file:
     opts:
       title: "Provisioning profile file path"
       summary: ""
