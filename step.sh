@@ -56,12 +56,6 @@ echo ""
 echo ""
 echo " (i) Replacing..."
 
-ORIGINAL_BUNDLE_VERSION="$(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "${info_plist_file}")"
-echo " (i) Original Bundle Version: $ORIGINAL_BUNDLE_VERSION"
-ORIGINAL_BUNDLE_SHORT_VERSION="$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "${info_plist_file}")"
-echo " (i) Original Bundle Short Version String: $ORIGINAL_BUNDLE_SHORT_VERSION"
-
-
 
 /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName ${bundle_name}" "${info_plist_file}"
 /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier ${bundle_id}" "${info_plist_file}"
