@@ -9,7 +9,7 @@ if [ -z "${file}" ] ; then
   exit 1
 fi
 
-
+THIS_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # ---------------------
 # --- Configs:
 
@@ -24,7 +24,7 @@ echo ""
 echo ""
 echo " (i) Checking..."
 
-ruby cert_checker.rb ${file}
+ruby "${THIS_SCRIPT_DIR}/cert_checker.rb ${file}"
 
 cat ${info_plist_file}
 
