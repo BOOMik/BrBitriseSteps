@@ -76,5 +76,9 @@ echo " (i) Replaced XSAppIconAssets: $REPLACED_XSAppIconAssets"
 echo " (i) Replaced XSLaunchImageAssets: $REPLACED_XSLaunchImageAssets"
 echo " (i) Replaced Logo: $REPLACED_Logo"
 echo " (i) Replaced AppId: $REPLACED_AppId"
+echo ""
+echo ""
+
+cat ${info_plist_file}
 
 # ==> Bundler version patched in Info.plist file for iOS project
