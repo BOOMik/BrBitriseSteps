@@ -38,3 +38,11 @@ inputs:
       description: |
         new value
       is_required: true  
+  - show_file: "false"
+    opts:
+      title: "show old and new file content"
+      summary: "For debug"
+      is_required: false
+      value_options:
+      - "true"
+      - "false"
