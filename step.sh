@@ -44,6 +44,7 @@ fi
 
 echo " (i) Provided Info.plist file path: ${info_plist_file}"
 echo " (i) Provided bundle_name: ${bundle_name}"
+echo " (i) Provided bundle_display_name: ${bundle_display_name}"
 echo " (i) Provided bundle_id: ${bundle_id}"
 echo " (i) Provided icon: ${icon}"
 echo " (i) Provided launch: ${launch}"
