@@ -32,6 +32,13 @@ inputs:
   - bundle_name:
     opts:
       title: "Bundle Display Name"
+      summary: "Set the :CFBundleName to a specified value. Should be string."
+      description: |
+        CFBundleName
+      is_required: true
+  - bundle_display_name:
+    opts:
+      title: "Bundle Display Display Name"
       summary: "Set the :CFBundleDisplayName to a specified value. Should be string."
       description: |
         CFBundleDisplayName

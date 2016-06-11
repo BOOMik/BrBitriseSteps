@@ -9,6 +9,10 @@ if [ -z "${info_plist_file}" ] ; then
   exit 1
 fi
 
+if [ -z "${bundle_display_name}" ] ; then
+  echo " [!] No bundle_display_name specified!"
+  exit 1
+fi
 if [ -z "${bundle_name}" ] ; then
   echo " [!] No bundle_name specified!"
   exit 1
@@ -57,7 +61,8 @@ echo ""
 echo " (i) Replacing..."
 
 
-/usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName ${bundle_name}" "${info_plist_file}"
+/usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName ${bundle_display_name}" "${info_plist_file}"
+/usr/libexec/PlistBuddy -c "Set :CFBundleName ${bundle_name}" "${info_plist_file}"
 /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier ${bundle_id}" "${info_plist_file}"
 /usr/libexec/PlistBuddy -c "Set :XSAppIconAssets ${icon}" "${info_plist_file}"
 /usr/libexec/PlistBuddy -c "Set :XSLaunchImageAssets ${launch}" "${info_plist_file}"
@@ -65,11 +70,13 @@ echo " (i) Replacing..."
 /usr/libexec/PlistBuddy -c "Set :AppId ${app_id}" "${info_plist_file}"
 
 REPLACED_CFBundleDisplayName="$(/usr/libexec/PlistBuddy -c "Print :CFBundleDisplayName" "${info_plist_file}")"
+REPLACED_CFBundleName="$(/usr/libexec/PlistBuddy -c "Print :CFBundleName" "${info_plist_file}")"
 REPLACED_CFBundleIdentifier="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "${info_plist_file}")"
 REPLACED_XSAppIconAssets="$(/usr/libexec/PlistBuddy -c "Print :XSAppIconAssets" "${info_plist_file}")"
 REPLACED_XSLaunchImageAssets="$(/usr/libexec/PlistBuddy -c "Print :XSLaunchImageAssets" "${info_plist_file}")"
 REPLACED_Logo="$(/usr/libexec/PlistBuddy -c "Print :Logo" "${info_plist_file}")"
 REPLACED_AppId="$(/usr/libexec/PlistBuddy -c "Print :AppId" "${info_plist_file}")"
+echo " (i) Replaced CFBundleName: $REPLACED_CFBundleName"
 echo " (i) Replaced CFBundleDisplayName: $REPLACED_CFBundleDisplayName"
 echo " (i) Replaced CFBundleIdentifier: $REPLACED_CFBundleIdentifier"
 echo " (i) Replaced XSAppIconAssets: $REPLACED_XSAppIconAssets"
